@@ -1,6 +1,6 @@
 {
   "name": "winston-express-request-logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Winston based express logger that includes request,  process, unique id and user information",
   "main": "index.js",
   "scripts": {

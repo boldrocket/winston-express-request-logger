@@ -38,6 +38,7 @@ winstonExRegLogger.createLogger({
     exitOnError: false
 });
 ```
+
 The second step is to add the request interceptor to express in order to get the necessary information from the express request object. The user id in this case is retrieved by getting the cookie named id from express (req.cookies['id']).
 
 ```
@@ -71,4 +72,18 @@ function configureApp(app, env) {
 	.....
 	.....
 }
+```
+
+## logging ##
+After the initialisation you can use the logger exactly as winston logger (log level, dynamic number of arguments). The only difference is that if you would like the request information to be printed the first argument of your logger needs to be the req object. Additionally, any Error object would be printed based on its stack trace.
+
+```
+// Logging
+var logger = require("winston-express-request-logger").getLogger();
+
+logger.info(req,"Get the user's details"); 
+// prints 2015-08-26T13:59:16.659Z - info: pId:9677 - uId:cidsul8ry000pgt3ugwebvei5 - cId:55dc48232a8708a3078e995a - cIP: 127.0.0.1 - cAction: GET /api/user/55dc48232a8708a3078e995a Get user details
+
+logger.info("Get the user's details");
+// prints 2015-08-26T13:59:16.659Z - info: Get the user's details
 ```
