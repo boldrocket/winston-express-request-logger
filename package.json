@@ -1,6 +1,6 @@
 {
   "name": "winston-express-request-logger",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Winston based express logger that includes request,  process, unique id and user information",
   "main": "index.js",
   "scripts": {
@@ -21,11 +21,11 @@
     "process"
   ],
   "dependencies": {
-    "winston": "*",
-    "cuid": "*",
-    "ipware":"*",
-    "process":"*",
-    "type-of-is":"*"
+    "winston": "1.0.1",
+    "cuid": "1.3.8",
+    "ipware":"0.0.7",
+    "process":"0.11.2",
+    "type-of-is":"3.4.0"
   },
   "author": "Antonis Theocharides",
   "license": "GLP",
